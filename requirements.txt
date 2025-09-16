@@ -1,0 +1,7 @@
+shiny
+pybaseball
+matplotlib
+pandas
+numpy
+scipy
+seaborn
