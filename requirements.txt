@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 shiny
 pybaseball
 matplotlib
@@ -6,12 +5,3 @@ pandas
 numpy
 scipy
 seaborn
-=======
-shiny
-pybaseball
-matplotlib
-pandas
-numpy
-scipy
-seaborn
->>>>>>> 1376f48eadcb1f47389a8b7759fb66ae73d4d9d3
