@@ -1,4 +1,5 @@
 import pybaseball as pb
+pb.cache.enable()
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd

@@ -7,6 +7,7 @@ import seaborn as sns
 from datetime import date
 from io import BytesIO
 import base64
+import gc
 from helpers import get_league_average, pitch_family_map
 from heatmaps import statcast_heatmap 
 
@@ -62,9 +63,12 @@ def server(input, output, session):
             buf.seek(0)
             encoded = base64.b64encode(buf.read()).decode("utf-8")
             buf.close()
+            plt.close(fig)
             return ui.tags.img(src=f"data:image/png;base64,{encoded}", style="max-width:100%;")
         except Exception as e:
             return ui.tags.div({"style": "color: red;"}, f"Error: {str(e)}")
-
+    @session.on_ended
+    def cleanup():
+        gc.collect()
 
 app = App(app_ui, server)
