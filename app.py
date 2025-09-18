@@ -56,6 +56,9 @@ def server(input, output, session):
     @output
     @render.ui
     def plot_ui():
+        if input.generate()==0:
+            return None
+
         try:
             fig = generate_heatmap()
             buf = BytesIO()
