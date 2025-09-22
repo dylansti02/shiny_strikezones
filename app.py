@@ -18,12 +18,27 @@ app_ui = ui.page_fluid(
     ui.input_text("player", "Player Name", placeholder="e.g., Shohei Ohtani"),
     ui.input_date("start_date", "Start Date", value="2023-04-01"),
     ui.input_date("end_date", "End Date"),
-    ui.input_select("pitch_type", "Pitch Type", 
-                    choices=["", "Fastball", "Breaking", "Offspeed"],
-                    selected=""),
-    ui.input_select("p_throws", "Pitcher Throws", 
-                    choices=["", "L", "R"],
-                    selected=""),
+    ui.input_select(
+    "pitch_type", 
+    "Pitch Type", 
+        choices={
+        "": "All Pitch Types", 
+        "Fastball": "Fastball", 
+        "Breaking": "Breaking", 
+        "Offspeed": "Offspeed"
+        },
+    selected=""
+),
+    ui.input_select(
+    "p_throws", 
+    "Pitcher Throws", 
+    choices={
+        "": "All", 
+        "L": "Left", 
+        "R": "Right"
+    },
+    selected=""
+),
     ui.input_action_button("generate", "Generate Heatmaps"),
 
     ui.output_ui("plot_ui")
